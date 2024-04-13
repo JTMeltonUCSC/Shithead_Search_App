@@ -15,4 +15,21 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MainComponent from '../components/MainComponent';
+import TranscriptSearch from '../components/TranscriptSearch';
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+    ReactDOM.render(<TranscriptSearch />, root);
+  });
+
+document.addEventListener('DOMContentLoaded', () => {
+    ReactDOM.render(
+      <MainComponent />,
+      document.getElementById('react-app')
+    );
+  });

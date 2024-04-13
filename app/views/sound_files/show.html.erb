@@ -1,0 +1,6 @@
+<!-- app/views/sound_files/show.html.erb -->
+<h1><%= @sound_file.title %></h1>
+<p>Uploaded File: <%= @sound_file.file.filename.to_s if @sound_file.file.attached? %></p>
+<audio controls>
+  <%= audio_tag url_for(@sound_file.file), type: 'audio/mpeg' if @sound_file.file.attached? %>
+</audio>

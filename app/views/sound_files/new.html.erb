@@ -1,0 +1,29 @@
+<!-- app/views/sound_files/new.html.erb -->
+<h1>Upload a New Sound File</h1>
+
+<%= form_with model: @sound_file, url: sound_files_path, local: true do |form| %>
+  <% if @sound_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sound_file.errors.count, "error") %> prohibited this file from being saved:</h2>
+      <ul>
+      <% @sound_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Upload" %>
+  </div>
+<% end %>

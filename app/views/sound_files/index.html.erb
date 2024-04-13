@@ -1,0 +1,17 @@
+<!-- app/views/sound_files/index.html.erb -->
+<h1>Sound Files</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Actions</th>
+  </tr>
+  <% @sound_files.each do |sound_file| %>
+    <tr>
+      <td><%= sound_file.title %></td>
+      <td>
+        <%= link_to 'Show', sound_file_path(sound_file) %> |
+        <%= link_to 'Delete', sound_file_path(sound_file), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
